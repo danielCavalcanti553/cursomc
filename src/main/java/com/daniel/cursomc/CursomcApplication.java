@@ -19,7 +19,10 @@ import com.daniel.cursomc.domain.PagamentoComBoleto;
 import com.daniel.cursomc.domain.PagamentoComCartao;
 import com.daniel.cursomc.domain.Pedido;
 import com.daniel.cursomc.domain.Produto;
+<<<<<<< HEAD
 import com.daniel.cursomc.domain.enums.EstadoPagamento;
+=======
+>>>>>>> d5c6a3cd935fa99e5af8c3ff45dc281791448c12
 import com.daniel.cursomc.domain.enums.TipoCliente;
 import com.daniel.cursomc.repositories.CategoriaRepository;
 import com.daniel.cursomc.repositories.CidadeRepository;
@@ -51,6 +54,7 @@ public class CursomcApplication implements CommandLineRunner{
 
 	@Autowired
 	private ClienteRepository clienteRepository;
+<<<<<<< HEAD
 	
 	@Autowired
 	private PedidoRepository pedidoRepository;
@@ -60,6 +64,9 @@ public class CursomcApplication implements CommandLineRunner{
 
 	@Autowired
 	private ItemPedidoRepository itemPedidoRepository;
+=======
+
+>>>>>>> d5c6a3cd935fa99e5af8c3ff45dc281791448c12
 	
 	public static void main(String[] args) {
 		SpringApplication.run(CursomcApplication.class, args);
@@ -109,6 +116,7 @@ public class CursomcApplication implements CommandLineRunner{
 		clienteRepository.save(Arrays.asList(cli1));
 		enderecoRepository.save(Arrays.asList(e1,e2));
 		
+<<<<<<< HEAD
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm");
 		
 		
@@ -138,6 +146,9 @@ public class CursomcApplication implements CommandLineRunner{
 		itemPedidoRepository.save(Arrays.asList(ip1,ip2,ip3));
 		
 		
+=======
+
+>>>>>>> d5c6a3cd935fa99e5af8c3ff45dc281791448c12
 		}
 
 }
