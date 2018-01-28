@@ -15,11 +15,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import com.daniel.cursomc.domain.enums.TipoCliente;
-<<<<<<< HEAD
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-=======
->>>>>>> d5c6a3cd935fa99e5af8c3ff45dc281791448c12
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 @Entity
 public class Cliente implements Serializable{
@@ -35,11 +32,7 @@ public class Cliente implements Serializable{
 	private Integer tipo;
 	
 	// ASSOCIACAO -> ENDEREÇO
-<<<<<<< HEAD
 	// PERMITIR A SERIALIZAÇÃO DOS ENDEREÇOS PELO CLIENTE (SOMENTE, UNIDIRECIONAL)
-	@JsonManagedReference
-=======
->>>>>>> d5c6a3cd935fa99e5af8c3ff45dc281791448c12
 	@OneToMany(mappedBy="cliente")
 	private List<Endereco> enderecos = new ArrayList<>();
 	
@@ -47,16 +40,13 @@ public class Cliente implements Serializable{
 	@ElementCollection
 	@CollectionTable(name="TELEFONE")
 	private Set<String> telefones = new HashSet<>();
-	
-<<<<<<< HEAD
+
 	// associado a pedido
-	@JsonBackReference
+	@JsonIgnore
 	@OneToMany(mappedBy="cliente")
 	private List<Pedido> pedidos = new ArrayList<Pedido>();
 	
 	
-=======
->>>>>>> d5c6a3cd935fa99e5af8c3ff45dc281791448c12
 	public Cliente() {	}
 
 	public Cliente(Integer id, String nome, String email, String cpfOuCnpj, TipoCliente tipo) {
@@ -123,7 +113,6 @@ public class Cliente implements Serializable{
 	public void setTelefones(Set<String> telefones) {
 		this.telefones = telefones;
 	}
-<<<<<<< HEAD
 	
 	public List<Pedido> getPedidos() {
 		return pedidos;
@@ -132,8 +121,6 @@ public class Cliente implements Serializable{
 	public void setPedidos(List<Pedido> pedidos) {
 		this.pedidos = pedidos;
 	}
-=======
->>>>>>> d5c6a3cd935fa99e5af8c3ff45dc281791448c12
 
 	@Override
 	public int hashCode() {
@@ -159,11 +146,7 @@ public class Cliente implements Serializable{
 			return false;
 		return true;
 	}
-<<<<<<< HEAD
 
-
-=======
->>>>>>> d5c6a3cd935fa99e5af8c3ff45dc281791448c12
 	
 	
 	

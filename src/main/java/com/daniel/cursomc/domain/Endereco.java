@@ -9,11 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-<<<<<<< HEAD
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
-=======
->>>>>>> d5c6a3cd935fa99e5af8c3ff45dc281791448c12
+import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 public class Endereco  implements Serializable{
 	
@@ -29,11 +25,8 @@ public class Endereco  implements Serializable{
 	private String cep;
 	
 	// ASSOCIACAO -> CLIENTE
-<<<<<<< HEAD
 	// ENDEREÇO NÃO PODE SERIALIZAR O CLIENTE (CONHECE)
-	@JsonBackReference
-=======
->>>>>>> d5c6a3cd935fa99e5af8c3ff45dc281791448c12
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="cliente_id")
 	private Cliente cliente;
