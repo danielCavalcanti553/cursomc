@@ -31,6 +31,11 @@ public class ItemPedido implements Serializable{
 		this.preco = preco;
 	}
 	
+	// GET para ser reconhecido no JSON
+	public double getSubTotal() {
+		return (preco-desconto) * quantidade;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
