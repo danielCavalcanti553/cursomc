@@ -75,8 +75,6 @@ public class PedidoService {
 		
 		emailService.sendOrderConfirmationEmail(obj);
 		
-		return obj;
-		
+		return obj;	
 	}
-	
 }
