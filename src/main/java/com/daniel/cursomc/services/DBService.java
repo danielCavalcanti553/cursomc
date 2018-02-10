@@ -128,8 +128,8 @@ public class DBService {
 			cli1.getTelefones().addAll(Arrays.asList("321-313","3123-3123"));
 		
 		Cliente cli2 = new Cliente(null,"Daniel","daniel.cavalcanti@outlook.com.br","89144828713",TipoCliente.PESSOAFISICA,pe.encode("123"));
-			cli1.getTelefones().addAll(Arrays.asList("321-313","3123-3123"));
-		cli2.addPerfil(Perfil.ADMIN);
+			cli2.getTelefones().addAll(Arrays.asList("321-313","3123-3123"));
+			cli2.addPerfil(Perfil.ADMIN);
 			
 		Endereco e1 = new Endereco(null, "Rua x" , "123", "Casa", "Campo Grande", "21332-213", cli1, c1);
 		Endereco e2 = new Endereco(null, "Rua y" , "231", "Casa", "Bangu", "21332-213", cli1, c2);
