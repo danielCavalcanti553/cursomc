@@ -1,5 +1,6 @@
 package com.daniel.cursomc.services;
 
+import java.net.URI;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.daniel.cursomc.domain.Cidade;
 import com.daniel.cursomc.domain.Cliente;
@@ -27,6 +29,9 @@ import com.daniel.cursomc.services.exceptions.ObjectNotFoundException;
 
 @Service
 public class ClienteService {
+	
+	@Autowired
+	private S3Service s3Service;
 	
 	@Autowired
 	private ClienteRepository repo;
@@ -114,7 +119,9 @@ public class ClienteService {
 		newObj.setEmail(obj.getEmail());
 	}
 
-
+	public URI uploadProfilePicture(MultipartFile multiPart) {
+		return s3Service.uploadFile(multiPart);
+	}
 
 	
 }

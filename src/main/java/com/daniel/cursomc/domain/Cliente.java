@@ -41,7 +41,7 @@ public class Cliente implements Serializable{
 	
 	@ElementCollection(fetch=FetchType.EAGER)
 	@CollectionTable(name="PERFIS")
-	private Set<Integer> perfis = new HashSet<>();	
+	private Set<Integer> perfis = new HashSet<>();
 	
 	// ASSOCIACAO -> ENDEREÇO
 	// PERMITIR A SERIALIZAÇÃO DOS ENDEREÇOS PELO CLIENTE (SOMENTE, UNIDIRECIONAL)
