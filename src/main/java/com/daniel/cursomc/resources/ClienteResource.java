@@ -23,6 +23,7 @@ import com.daniel.cursomc.domain.Cliente;
 import com.daniel.cursomc.dto.ClienteDTO;
 import com.daniel.cursomc.dto.ClienteNewDTO;
 import com.daniel.cursomc.services.ClienteService;
+import com.daniel.cursomc.services.exceptions.FileEmptyException;
 
 @RestController
 @RequestMapping(value="/clientes")
@@ -87,10 +88,13 @@ public class ClienteResource {
 	
 	@RequestMapping(value="/picture",method=RequestMethod.POST)
 	public ResponseEntity<Void> uploadProfilePicture(@RequestParam(name="file") MultipartFile file){
-		
+		try {
 		URI uri = service.uploadProfilePicture(file);
-		
 		return ResponseEntity.created(uri).build();
+		}catch(Exception e) {
+			throw new FileEmptyException("Iválido");
+		}
+		
 	}
 
 }
