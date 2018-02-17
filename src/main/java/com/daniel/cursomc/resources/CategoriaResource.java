@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.daniel.cursomc.domain.Categoria;
+import com.daniel.cursomc.domain.Pedido;
 import com.daniel.cursomc.dto.CategoriaDTO;
 import com.daniel.cursomc.services.CategoriaService;
 
@@ -29,6 +30,7 @@ public class CategoriaResource {
 	@Autowired
 	private CategoriaService service;
 	
+
 	@RequestMapping(value="/{id}",method=RequestMethod.GET)
 	public ResponseEntity<Categoria> find(@PathVariable Integer id) {
 		Categoria obj = service.find(id);
