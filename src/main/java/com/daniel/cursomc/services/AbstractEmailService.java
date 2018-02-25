@@ -8,7 +8,7 @@ import com.daniel.cursomc.domain.Pedido;
 
 public abstract class AbstractEmailService implements EmailService{
 
-	@Value("${default.sender")
+	@Value("${default.sender}")
 	private String sender;
 	
 	@Override
